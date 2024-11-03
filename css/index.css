@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  /* Body and html height to 100% */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Hide overflow */
+}
+
+.invitation-container {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 15px;
+  /* Make it slightly rectangular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  /* Position relative to allow absolute positioning of the overlay */
+  height: 80vh;
+  /* Set height of the card */
+  display: flex;
+  /* Use flexbox for centering content */
+  flex-direction: column;
+  /* Arrange items in a column */
+  justify-content: center;
+  /* Center vertically */
+  overflow: hidden;
+  /* Hide overflow for the overlay */
+  cursor: pointer;
+  /* Pointer cursor for hover effect */
+}
+
+h1 {
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.footer {
+  margin-top: 15px;
+  font-style: italic;
+  color: #555;
+}
+
+/* Yuqoridan chiqadigan smayllar */
+.emoji-top {
+  position: absolute;
+  top: -50px;
+  /* Start position above the card */
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  /* Start slightly lower */
+  font-size: 30px;
+  opacity: 0;
+  /* Start invisible */
+  transition: top 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+  /* Smooth transition */
+}
+
+/* Pastdan chiqadigan smayllar */
+.emoji-bottom {
+  position: absolute;
+  bottom: -50px;
+  /* Start position below the card */
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  /* Start slightly lower */
+  font-size: 30px;
+  opacity: 0;
+  /* Start invisible */
+  transition: bottom 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+  /* Smooth transition */
+}
+
+/* Yuqoridan smayllarni ko'rsatish */
+.invitation-container:hover .emoji-top {
+  top: 10px;
+  /* Position when visible */
+  opacity: 1;
+  /* Make visible */
+  transform: translateX(-50%) translateY(0);
+  /* Move to original position */
+}
+
+/* Pastdan smayllarni ko'rsatish */
+.invitation-container:hover .emoji-bottom {
+  bottom: 10px;
+  /* Position when visible */
+  opacity: 1;
+  /* Make visible */
+  transform: translateX(-50%) translateY(0);
+  /* Move to original position */
+}
